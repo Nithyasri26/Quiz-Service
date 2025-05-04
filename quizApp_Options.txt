@@ -1,0 +1,402 @@
+[
+    {
+        "optionId": "OPT01",
+        "questionId": "Q01",
+        "option1": "Object class",
+        "option2": "Main class",
+        "option3": "Static block",
+        "option4": "JVM class"
+    },
+    {
+        "optionId": "OPT02",
+        "questionId": "Q02",
+        "option1": "Interprets bytecode line by line",
+        "option2": "Compiles bytecode into native code at runtime",
+        "option3": "Converts Java code to machine code before execution",
+        "option4": "Optimizes Java code without compilation"
+    },
+    {
+        "optionId": "OPT03",
+        "questionId": "Q03",
+        "option1": "To improve security and performance",
+        "option2": "Because Java does not support mutable strings",
+        "option3": "To allow garbage collection to be more efficient",
+        "option4": "To avoid memory leaks"
+    },
+    {
+        "optionId": "OPT04",
+        "questionId": "Q04",
+        "option1": "gc()",
+        "option2": "System.gc()",
+        "option3": "dispose()",
+        "option4": "finalize()"
+    },
+    {
+        "optionId": "OPT05",
+        "questionId": "Q05",
+        "option1": "map()",
+        "option2": "filter()",
+        "option3": "collect()",
+        "option4": "peek()"
+    },
+    {
+        "optionId": "OPT06",
+        "questionId": "Q06",
+        "option1": "HashMap is synchronized, TreeMap is not",
+        "option2": "TreeMap maintains sorted order, HashMap does not",
+        "option3": "Both store elements in sorted order",
+        "option4": "HashMap allows only unique keys, TreeMap allows duplicates"
+    },
+    {
+        "optionId": "OPT07",
+        "questionId": "Q07",
+        "option1": "To remove the need for abstract classes",
+        "option2": "To allow interfaces to have method implementations",
+        "option3": "To improve memory management",
+        "option4": "To enforce functional programming"
+    },
+    {
+        "optionId": "OPT08",
+        "questionId": "Q08",
+        "option1": "Runnable can be used with Executors, Callable cannot",
+        "option2": "Callable returns a result, Runnable does not",
+        "option3": "Runnable is only used in multi-threading, Callable is not",
+        "option4": "Callable cannot throw exceptions, Runnable can"
+    },
+    {
+        "optionId": "OPT09",
+        "questionId": "Q09",
+        "option1": "a, b -> a + b",
+        "option2": "(a, b) -> a + b",
+        "option3": "(a, b) => a + b",
+        "option4": "(a, b) -> { return a + b; }"
+    },
+    {
+        "optionId": "OPT10",
+        "questionId": "Q10",
+        "option1": "equals()",
+        "option2": "compareTo()",
+        "option3": "compare()",
+        "option4": "hashCode()"
+    },
+    {
+        "optionId": "OPT11",
+        "questionId": "Q11",
+        "option1": "A list is immutable, whereas a tuple is mutable.",
+        "option2": "A tuple is mutable, whereas a list is immutable.",
+        "option3": "A list is mutable, whereas a tuple is immutable.",
+        "option4": "Both list and tuple are immutable."
+    },
+    {
+        "optionId": "OPT12",
+        "questionId": "Q12",
+        "option1": "Using the 'define' keyword followed by the function name.",
+        "option2": "Using the 'def' keyword followed by the function name and parentheses.",
+        "option3": "Using the 'function' keyword followed by curly braces.",
+        "option4": "Using the 'lambda' keyword followed by the function name."
+    },
+    {
+        "optionId": "OPT13",
+        "questionId": "Q13",
+        "option1": "It is used to delete an object in Python.",
+        "option2": "It is a constructor method used to initialize an object’s attributes.",
+        "option3": "It is used to call the parent class constructor explicitly.",
+        "option4": "It defines the class name in Python."
+    },
+    {
+        "optionId": "OPT14",
+        "questionId": "Q14",
+        "option1": "Using try-except blocks.",
+        "option2": "Using if-else statements.",
+        "option3": "Using switch-case statements.",
+        "option4": "Using the error keyword."
+    },
+    {
+        "optionId": "OPT15",
+        "questionId": "Q15",
+        "option1": "'is' checks object identity, while '==' checks value equality.",
+        "option2": "'is' checks value equality, while '==' checks object identity.",
+        "option3": "Both 'is' and '==' perform the same function in Python.",
+        "option4": "'==' is used only for numbers, while 'is' is used for strings."
+    },
+    {
+        "optionId": "OPT16",
+        "questionId": "Q16",
+        "option1": "The GIL is a mutex that allows only one thread to execute at a time in Python’s CPython implementation.",
+        "option2": "The GIL is a mechanism that enables true parallel execution of multiple threads in Python.",
+        "option3": "The GIL is a Python library used for global threading control.",
+        "option4": "The GIL allows multiple Python programs to run in separate processes without interference."
+    },
+    {
+        "optionId": "OPT17",
+        "questionId": "Q17",
+        "option1": "A shallow copy creates a new object but references the same nested objects, while a deep copy creates completely independent copies.",
+        "option2": "A deep copy creates a new object but references the same nested objects, while a shallow copy creates completely independent copies.",
+        "option3": "There is no difference between a deep copy and a shallow copy in Python.",
+        "option4": "A shallow copy removes duplicate objects, whereas a deep copy keeps them."
+    },
+    {
+        "optionId": "OPT18",
+        "questionId": "Q18",
+        "option1": "Python uses automatic memory management with reference counting and garbage collection.",
+        "option2": "Python requires manual memory allocation and deallocation like C.",
+        "option3": "Python uses a fixed amount of memory for all variables and objects.",
+        "option4": "Python does not manage memory; it relies on the operating system."
+    },
+    {
+        "optionId": "OPT19",
+        "questionId": "Q19",
+        "option1": "Metaclasses define the behavior of class creation and allow customization of class attributes and methods.",
+        "option2": "Metaclasses are a type of function that automatically executes before any class is defined.",
+        "option3": "Metaclasses are special objects used to store metadata about Python modules.",
+        "option4": "Metaclasses are a feature in Python that enables dynamic memory allocation."
+    },
+    {
+        "optionId": "OPT20",
+        "questionId": "Q20",
+        "option1": "A 'staticmethod' does not access instance or class variables, while a 'classmethod' takes 'cls' as the first parameter and can modify class attributes.",
+        "option2": "A 'staticmethod' can modify class attributes, while a 'classmethod' cannot access them.",
+        "option3": "There is no difference between 'staticmethod' and 'classmethod' in Python.",
+        "option4": "A 'classmethod' is used only for utility functions, while a 'staticmethod' modifies class variables."
+    },
+    {
+        "optionId": "OPT21",
+        "questionId": "Q21",
+        "option1": "<div> is used for styling text, while <span> is used for layout structure.",
+        "option2": "<div> is an inline element, while <span> is a block-level element.",
+        "option3": "<div> is a block-level element used for structure, while <span> is an inline element used for styling parts of text.",
+        "option4": "<div> and <span> have no difference in HTML."
+    },
+    {
+        "optionId": "OPT22",
+        "questionId": "Q22",
+        "option1": "The <head> tag is used to display text at the top of the webpage.",
+        "option2": "The <head> tag is used to define the body structure of the webpage.",
+        "option3": "The <head> tag contains metadata, links to stylesheets, scripts, and other information that is not visible on the page.",
+        "option4": "The <head> tag is used to contain all visible content of the page."
+    },
+    {
+        "optionId": "OPT23",
+        "questionId": "Q23",
+        "option1": "<b> and <strong> are identical and have no difference.",
+        "option2": "<b> is used for italic text, while <strong> is used for underlined text.",
+        "option3": "<b> makes text bold without semantic meaning, while <strong> indicates importance and has SEO benefits.",
+        "option4": "<b> is used only for headings, while <strong> is used for paragraphs."
+    },
+    {
+        "optionId": "OPT24",
+        "questionId": "Q24",
+        "option1": "Relative and absolute are the same, while fixed keeps elements hidden.",
+        "option2": "Relative is positioned relative to itself, absolute is positioned relative to its nearest positioned ancestor, and fixed is positioned relative to the viewport.",
+        "option3": "Absolute and fixed behave the same way, while relative is always positioned at the top.",
+        "option4": "Fixed is positioned relative to its parent, while relative and absolute are positioned relative to the document."
+    },
+    {
+        "optionId": "OPT25",
+        "questionId": "Q25",
+        "option1": "`vh` and `vw` are relative to the parent element, while `em` and `rem` are absolute units.",
+        "option2": "`vh` and `vw` are viewport-based units, `em` is relative to the parent element, and `rem` is relative to the root element.",
+        "option3": "`em` and `rem` are both relative to the root element, while `vh` and `vw` are used for positioning.",
+        "option4": "`vh`, `vw`, `em`, and `rem` all work the same way and are interchangeable."
+    },
+    {
+        "optionId": "OPT26",
+        "questionId": "Q26",
+        "option1": "`null` and `undefined` are the same and can be used interchangeably.",
+        "option2": "`null` is an intentional empty value, while `undefined` means a variable has been declared but not assigned a value.",
+        "option3": "`undefined` is a number type, while `null` is a string type.",
+        "option4": "`null` means a variable is deleted, while `undefined` means a variable does not exist."
+    },
+    {
+        "optionId": "OPT27",
+        "questionId": "Q27",
+        "option1": "Hoisting is JavaScript's behavior of moving variable and function declarations to the top of their scope before execution.",
+        "option2": "Hoisting is a technique used to optimize JavaScript performance by preloading variables.",
+        "option3": "Hoisting only works with `let` and `const` variables, not `var` or functions.",
+        "option4": "Hoisting is the process of manually moving functions and variables to the top of the script."
+    },
+    {
+        "optionId": "OPT28",
+        "questionId": "Q28",
+        "option1": "A closure is a function that retains access to its outer function’s variables even after the outer function has finished execution.",
+        "option2": "A closure is a function that only runs once and cannot access outer variables.",
+        "option3": "A closure is a built-in JavaScript function used for memory management.",
+        "option4": "A closure is a feature that allows functions to be executed asynchronously."
+    },
+    {
+        "optionId": "OPT29",
+        "questionId": "Q29",
+        "option1": "`innerText` gets only visible text, `textContent` gets all text, and `innerHTML` returns the HTML inside an element.",
+        "option2": "`innerText` and `textContent` are identical, but `innerHTML` only retrieves text.",
+        "option3": "`textContent` and `innerHTML` are the same, while `innerText` is used only for input fields.",
+        "option4": "`innerHTML` removes all HTML tags, while `innerText` and `textContent` keep them."
+    },
+    {
+        "optionId": "OPT30",
+        "questionId": "Q30",
+        "option1": "`splice()` modifies the original array by adding/removing elements, while `slice()` returns a new array without modifying the original.",
+        "option2": "`slice()` modifies the original array, while `splice()` creates a copy of the array.",
+        "option3": "`splice()` and `slice()` both return new arrays and do not modify the original array.",
+        "option4": "`splice()` is only used for removing elements, while `slice()` is used for adding elements."
+    },
+    {
+        "optionId": "OPT31",
+        "questionId": "Q31",
+        "option1": "`CrudRepository` is used only for read operations, whereas `JpaRepository` is used for write operations.",
+        "option2": "`JpaRepository` is used for SQL databases, while `CrudRepository` is used for NoSQL databases.",
+        "option3": "`CrudRepository` provides basic CRUD operations, while `JpaRepository` extends it with additional JPA-specific operations like pagination and batch processing.",
+        "option4": "`CrudRepository` is a Hibernate-based repository, whereas `JpaRepository` is a Spring-specific implementation."
+    },
+    {
+        "optionId": "OPT32",
+        "questionId": "Q32",
+        "option1": "`@Transactional` is used to improve method performance by caching results.",
+        "option2": "`@Transactional` ensures that a method runs within a transaction, providing rollback and commit functionality.",
+        "option3": "`@Transactional` is used to execute methods asynchronously in Spring.",
+        "option4": "`@Transactional` is an annotation to enable dependency injection in Spring components."
+    },
+    {
+        "optionId": "OPT33",
+        "questionId": "Q33",
+        "option1": "Eager loading fetches related entities only when accessed, while lazy loading retrieves them immediately.",
+        "option2": "Lazy loading fetches related entities only when accessed, while eager loading retrieves them immediately.",
+        "option3": "Both lazy and eager loading always fetch all related entities at the same time.",
+        "option4": "Lazy loading and eager loading are used only in SQL queries, not in Hibernate."
+    },
+    {
+        "optionId": "OPT34",
+        "questionId": "Q34",
+        "option1": "DispatcherServlet is used to handle database transactions in Spring MVC.",
+        "option2": "DispatcherServlet is the front controller that routes incoming HTTP requests to appropriate handlers in a Spring MVC application.",
+        "option3": "DispatcherServlet is responsible for rendering views in Spring MVC without handling HTTP requests.",
+        "option4": "DispatcherServlet is used only for handling REST APIs in Spring Boot applications."
+    },
+    {
+        "optionId": "OPT35",
+        "questionId": "Q35",
+        "option1": "Feign Client is a declarative REST client in Spring Cloud used to simplify HTTP requests between Microservices.",
+        "option2": "Feign Client is used to manage database transactions in Microservices architecture.",
+        "option3": "Feign Client is a caching mechanism used in Spring Boot applications.",
+        "option4": "Feign Client is responsible for load balancing requests in Microservices."
+    },
+    {
+        "optionId": "OPT36",
+        "questionId": "Q36",
+        "option1": "JDBC uses `DriverManager` or DataSource to establish connections and manages database interactions using `Connection`, `Statement`, and `ResultSet`.",
+        "option2": "JDBC manages database connections using Hibernate and JPA automatically.",
+        "option3": "JDBC does not require explicit database connections and works with in-memory storage only.",
+        "option4": "JDBC uses XML configurations to establish connections instead of `DriverManager`."
+    },
+    {
+        "optionId": "OPT37",
+        "questionId": "Q37",
+        "option1": "Microservices are tightly coupled and difficult to maintain, while Monolithic applications are modular and easy to scale.",
+        "option2": "Monolithic applications are always more scalable than Microservices due to their single codebase.",
+        "option3": "Microservices do not support independent deployment and require a monolithic structure for scalability.",
+        "option4": "Monolithic applications are tightly coupled and harder to scale, while Microservices are modular, scalable, and independently deployable."
+    },
+    {
+        "optionId": "OPT38",
+        "questionId": "Q38",
+        "option1": "Spring Boot requires manual bean definitions for all configurations to work properly.",
+        "option2": "Spring Boot auto-configuration works only when explicitly enabled in `application.properties`.",
+        "option3": "Spring Boot uses `@EnableAutoConfiguration` to load default configurations based on classpath dependencies using `spring.factories`.",
+        "option4": "Spring Boot auto-configuration is triggered only when using XML-based configurations."
+    },
+    {
+        "optionId": "OPT39",
+        "questionId": "Q39",
+        "option1": "`@Repository` is used for service layer components, while `@Service` is for data access objects (DAO).",
+        "option2": "`@Component` is only used for manually defining Spring beans in configuration classes.",
+        "option3": "`@Component` is a generic stereotype for beans, `@Service` is for business logic, and `@Repository` is for DAO layers with exception translation.",
+        "option4": "`@Service` is for defining repository beans, and `@Repository` is used for marking utility classes in Spring Boot."
+    },
+    {
+        "optionId": "OPT40",
+        "questionId": "Q40",
+        "option1": "`IN` checks if a value exists within a list, while `EXISTS` is used with subqueries to check if records exist.",
+        "option2": "`EXISTS` checks if a value exists within a list, while `IN` is used with subqueries to check record existence.",
+        "option3": "`IN` is used only for numeric values, whereas `EXISTS` works with string values.",
+        "option4": "`IN` is used for checking null values, whereas `EXISTS` is used for non-null values."
+    },
+    {
+        "optionId": "OPT41",
+        "questionId": "Q41",
+        "option1": "OUTER JOIN returns only matching rows, while INNER JOIN includes unmatched rows.",
+        "option2": "INNER JOIN includes unmatched rows, while OUTER JOIN returns only matching rows.",
+        "option3": "INNER JOIN returns only matching rows, while OUTER JOIN includes unmatched rows from one or both tables.",
+        "option4": "INNER JOIN and OUTER JOIN always return the same result."
+    },
+    {
+        "optionId": "OPT42",
+        "questionId": "Q42",
+        "option1": "GROUP BY is used to filter rows based on conditions.",
+        "option2": "GROUP BY is used to sort the result set in ascending or descending order.",
+        "option3": "GROUP BY is used to group rows with the same values in specified columns and perform aggregate functions like SUM or COUNT.",
+        "option4": "GROUP BY is used to join multiple tables in a query."
+    },
+    {
+        "optionId": "OPT43",
+        "questionId": "Q43",
+        "option1": "A database index is used to store entire tables separately for better organization.",
+        "option2": "A database index duplicates all table data to improve performance.",
+        "option3": "A database index increases the storage size but has no effect on query speed.",
+        "option4": "A database index is a data structure that improves search performance by enabling faster lookups of rows in a table."
+    },
+    {
+        "optionId": "OPT44",
+        "questionId": "Q44",
+        "option1": "UNION removes all rows, while UNION ALL only keeps unique rows.",
+        "option2": "UNION ALL removes duplicate rows, while UNION includes all rows.",
+        "option3": "UNION removes duplicate rows, while UNION ALL includes all rows, including duplicates.",
+        "option4": "UNION is used only for numeric data, while UNION ALL works with all data types."
+    },
+    {
+        "optionId": "OPT45",
+        "questionId": "Q45",
+        "option1": "HAVING and WHERE can be used interchangeably in SQL queries.",
+        "option2": "WHERE filters rows before aggregation, while HAVING filters grouped results after aggregation.",
+        "option3": "WHERE is only used in SELECT statements, while HAVING is used in all SQL statements.",
+        "option4": "HAVING is used for filtering individual rows, while WHERE is used for filtering grouped results."
+    },
+    {
+        "optionId": "OPT46",
+        "questionId": "Q46",
+        "option1": "A subquery is a nested query that provides data to the main query, while a JOIN combines columns from multiple tables.",
+        "option2": "A subquery is used only in SELECT statements, while a JOIN can be used in all SQL queries.",
+        "option3": "A JOIN is used only for filtering data, whereas a subquery is used for sorting data.",
+        "option4": "Subqueries and JOINs perform the same function, but subqueries execute faster than JOINs."
+    },
+    {
+        "optionId": "OPT47",
+        "questionId": "Q47",
+        "option1": "A stored procedure and a function are the same in SQL with no major differences.",
+        "option2": "A function in SQL can modify database tables, while a stored procedure is only for computations.",
+        "option3": "Stored procedures are executed automatically, whereas functions require explicit calls.",
+        "option4": "A stored procedure performs operations and may return multiple values, while a function must return a single value."
+    },
+    {
+        "optionId": "OPT48",
+        "questionId": "Q48",
+        "option1": "Normalization is a technique used to increase data redundancy for faster retrieval.",
+        "option2": "Normalization is the process of denormalizing tables to improve query performance.",
+        "option3": "Normalization is the process of organizing data to reduce redundancy and improve data integrity.",
+        "option4": "Normalization is a process that merges multiple tables into a single table to simplify the database schema."
+    },
+    {
+        "optionId": "OPT49",
+        "questionId": "Q49",
+        "option1": "ACID stands for Atomicity, Consistency, Isolation, and Durability, ensuring reliable transactions in a database.",
+        "option2": "ACID stands for Accuracy, Concurrency, Integrity, and Dependability, improving database performance.",
+        "option3": "ACID properties are optional settings used to optimize database queries.",
+        "option4": "ACID is a database model that prioritizes speed over data consistency."
+    },
+    {
+        "optionId": "OPT50",
+        "questionId": "Q50",
+        "option1": "A primary key allows duplicate values, while a foreign key must be unique.",
+        "option2": "A foreign key is always a combination of multiple columns, while a primary key is a single column.",
+        "option3": "A primary key uniquely identifies records in a table, while a foreign key establishes a relationship between two tables.",
+        "option4": "A primary key is optional in a table, but a foreign key is mandatory."
+    }
+]

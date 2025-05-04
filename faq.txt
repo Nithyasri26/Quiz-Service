@@ -1,0 +1,1332 @@
+Frequently Asked Questions (FAQs) on Core Java
+Q1: What is a Class in Java?
+A class in Java is a blueprint for creating objects. It defines properties and behaviors that the objects created from the class can have. A class can contain fields (variables), methods (functions), constructors, blocks, nested classes, and interfaces.
+ 
+code
+class Car {
+    // Fields (variables)   
+String color;   
+String model;       
+// Methods (functions)
+void drive() {
+        System.out.println("The car is driving.");
+    }
+}
+ 
+Q2: What is an Object in Java?
+An object is an instance of a class. It is created using the new keyword and represents a specific realization of the class. Each object can have its own state and behavior as defined by the class.
+Code
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car(); // Create an objectofCar
+       myCar.color = "Red";
+        myCar.model = "Toyota";
+        myCar.drive(); // Call the drive method
+    }
+}
+ 
+Q3: What is the difference between a class and an object?
+Class: A template or blueprint for creating objects. It defines properties and methods.
+Object: An instance of a class. It is a concrete realization of the class with actual values and behavior.
+Q4: What is a Constructor in Java?
+A constructor is a special method that is called when an object is instantiated. It initializes the object. Constructors have the same name as the class and do not have a return type.
+code
+public class Car {
+    String color; 
+  String model;       
+// Constructor
+public Car(String color, String model) {
+        this.color = color;
+        this.model = model;
+    }
+}
+ 
+Q5: What is the this keyword in Java?
+The this keyword refers to the current object in a method or constructor. It is used to access class members (variables and methods) and to resolve ambiguity between class fields and parameters with the same name.
+Code
+public class Car {
+    String color; 
+  String model;     
+  public Car(String color, String model)
+{
+        this.color = color; // Using 'this' to refer to the current object's fields
+this.model = model;
+    }
+}
+ 
+Q6: What is Inheritance in Java?
+Inheritance is a mechanism where one class (subclass or derived class) inherits the fields and methods of another class (superclass or base class). It allows for code reuse and the creation of a hierarchical relationship between classes.
+code
+public class Vehicle {
+    void start() {
+        System.out.println("Vehicle is starting");
+    }
+}
+public class Car extends Vehicle {
+    void drive() {
+        System.out.println("Car is driving");
+    }
+}
+ 
+Q7: What is Polymorphism in Java?
+Polymorphism is the ability of an object to take on many forms. It allows methods to do different things based on the object it is acting upon. Polymorphism is achieved through method overriding (runtime polymorphism) and method overloading (compile-time polymorphism).
+Code
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Animal myDog = new Dog(); // Polymorphism
+        myDog.sound(); // Calls the overridden method in Dog class
+    }
+}
+ 
+Q8: What is Encapsulation in Java?
+Encapsulation is the practice of wrapping data (variables) and methods into a single unit, called a class. It restricts direct access to some of the object's components, which can be achieved by using private fields and providing public getter and setter methods.
+Code
+public class Person {
+    private String name;
+    private int age;
+        // Getter and Setter methods
+public String getName() {
+        return name;
+    }   
+    public void setName(String name) {
+        this.name = name;
+    } 
+      public int getAge() {
+        return age;
+    }
+    
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+ 
+Q9: What is an Interface in Java?
+An interface in Java is a reference type, similar to a class, that can contain only constants, method signatures, default methods, static methods, and nested types. Interfaces cannot contain instance fields or constructors. They are used to specify a set of methods that a class must implement.
+Code
+interface Animal {
+    void eat();
+    void sleep();
+}
+class Dog implements Animal {
+    public void eat() {
+        System.out.println("Dog eats");
+    }        public void sleep() {
+        System.out.println("Dog sleeps");
+    }
+}
+ 
+Q10: What is Abstract Class in Java?
+An abstract class in Java is a class that cannot be instantiated on its own and is meant to be subclassed. It can have abstract methods (methods without a body) and concrete methods (methods with a body). Abstract classes are used to provide a common interface and shared behavior to derived classes.
+Code
+abstract class Animal {
+    abstract void makeSound();
+        void sleep() {
+        System.out.println("Animal is sleeping");
+    }
+}class Dog extends Animal {
+    void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+ 
+Frequently Asked Questions (FAQs) on Exception Handling in Java
+Q1: What is Exception Handling in Java?
+Exception handling in Java is a mechanism to handle runtime errors, ensuring the normal flow of the application. It uses try, catch, finally, and throw keywords to manage and handle exceptions.
+Q2: What is an Exception?
+An exception is an event that disrupts the normal flow of the program during runtime. It can be caused by various reasons such as invalid user input, file not found, network connection failure, or an array index being out of bounds.
+Q3: What are the types of Exceptions in Java?
+Exceptions in Java are categorized into two types:
+Checked Exceptions: These are exceptions that are checked at compile-time. Examples include IOException, SQLException, and ClassNotFoundException.
+Unchecked Exceptions: These are exceptions that are not checked at compile-time but occur during runtime. Examples include ArithmeticException, NullPointerException, and ArrayIndexOutOfBoundsException.
+Q4: What is the difference between throw and throws?
+throw: Used to explicitly throw an exception from a method or block of code.
+throws: Used in the method signature to declare that a method can throw one or more exceptions.
+Code
+public void exampleMethod() throws IOException
+{
+    throw new IOException("Example exception");
+}
+ 
+Q5: What is the finally block in Java?
+The finally block contains code that is always executed, regardless of whether an exception is thrown or not. It is used to perform cleanup activities, such as closing files or releasing resources.
+Code
+try {
+    // Code that may throw an exception} catch (Exception e) {
+    // Exception handling code} finally {
+    // Cleanup code
+}
+ 
+Q6: What is a try-catch block?
+A try-catch block is used to handle exceptions. The code that may throw an exception is placed in the try block, and the code to handle the exception is placed in the catch block.
+Code
+try {
+    // Code that may throw an exception} catch (ExceptionType e) {
+    // Code to handle the exception
+}
+ 
+Q7: Can we have multiple catch blocks for a single try block?
+Yes, a single try block can be followed by multiple catch blocks to handle different types of exceptions. Each catch block handles a specific type of exception.
+code
+try {
+    // Code that may throw exceptions} catch (IOException e) {
+    // Handle IOException} catch (SQLException e) {
+    // Handle SQLException} catch (Exception e) {
+    // Handle any other exceptions
+}
+ 
+Q8: What is a custom exception?
+A custom exception is a user-defined exception that extends the Exception class or one of its subclasses. It is used to create specific exception types that are relevant to the application's domain.
+code
+class CustomException extends Exception {
+    public CustomException(String message) {
+        super(message);
+    }
+}
+ 
+Q9: What is the throw keyword used for?
+The throw keyword is used to explicitly throw an exception in a method or block of code. It can be used to throw both checked and unchecked exceptions.
+Code
+public void method() {
+    throw new NullPointerException("This is a custom message");
+}
+ 
+Q10: What is the throws keyword used for?
+The throws keyword is used in a method's declaration to indicate that the method can throw one or more exceptions. It is used to propagate checked exceptions up the call stack.
+Code
+public void exampleMethod() throws IOException {
+    // Code that may throw IOException
+}
+ 
+Q11: Can we write only a try block without catch and finally?
+No, a try block must be followed by either a catch block, a finally block, or both. The try block alone is not allowed.
+Code
+try {
+    // Code that may throw an exception} finally {
+    // Cleanup code
+}
+ 
+Q12: What is the Exception class in Java?
+The Exception class is the base class for all exceptions in Java. It is a subclass of the Throwable class. All user-defined exceptions should extend this class.
+Q13: What is the Throwable class in Java?
+The Throwable class is the superclass of all errors and exceptions in Java. It has two main subclasses: Exception and Error.
+Q14: What is the difference between Exception and Error?
+Exception: Represents conditions that a reasonable application might want to catch. Examples include IOException and SQLException.
+Error: Represents serious problems that a reasonable application should not try to catch. Examples include OutOfMemoryError and StackOverflowError.
+Q15: How to create a custom exception?
+To create a custom exception, extend the Exception class and provide constructors that call the superclass constructors.
+Code
+class CustomException extends Exception {
+    public CustomException(String message) {
+        super(message);
+    }
+}
+ 
+ 
+[Tuesday 17:39] Gupta, Manish
+ 
+Frequently Asked Questions (FAQs) on the Java Collection Framework
+Q1: What is the Java Collection Framework?
+The Java Collection Framework (JCF) is a set of classes and interfaces that implement commonly reusable collection data structures, such as lists, sets, and maps. It provides a unified architecture for manipulating and processing collections of objects.
+Q2: What are the main interfaces of the Collection Framework?
+The main interfaces of the Collection Framework are:
+Collection: The root interface from which all collection interfaces extend.
+List: An ordered collection (also known as a sequence).
+Set: A collection that does not allow duplicate elements.
+Map: An object that maps keys to values, without duplicate keys.
+Queue: A collection used to hold multiple elements prior to processing.
+Q3: What is the difference between a List and a Set?
+List: Allows duplicate elements and maintains the insertion order. Common implementations are ArrayList, LinkedList, and Vector.
+Set: Does not allow duplicate elements and does not guarantee any specific order. Common implementations are HashSet, LinkedHashSet, and TreeSet.
+Q4: What is the difference between HashMap and TreeMap?
+HashMap: Uses a hash table for storage. It allows  null keys and values, and does not maintain any order. Operations like insertion, deletion, and retrieval are generally constant time, O(1).
+TreeMap: Implements the NavigableMap interface and uses a red-black tree for storage. It does not allow null keys and maintains elements in natural or custom order (sorted according to the natural ordering of its keys or by a Comparator provided at map creation time).
+Q5: What is the difference between ArrayList and LinkedList?
+ArrayList: Backed by a dynamic array. Provides fast random access (O(1)) but slow insertions and deletions (O(n)) due to the need for resizing and shifting elements.
+LinkedList: Implements a doubly-linked list. Provides fast insertions and deletions (O(1)) but slower random access (O(n)).
+Q6: How do you synchronize collections in Java?
+Java provides synchronized versions of collections via utility methods in the Collections class. For example:
+Collections.synchronizedList(new ArrayList<>())
+Collections.synchronizedSet(new HashSet<>())
+Collections.synchronizedMap(new HashMap<>())
+Alternatively, you can use concurrent collections from the java.util.concurrent package, such as ConcurrentHashMap, CopyOnWriteArrayList, and ConcurrentLinkedQueue.
+Q7: What is the difference between Iterator and ListIterator?
+Iterator: Can traverse a collection in a forward direction only and allows the removal of elements during iteration. Available for all collection types.
+ListIterator: Extends Iterator and allows bidirectional traversal (forward and backward) and modification of elements. Available only for list types.
+Q8: What are some commonly used implementations of the Map interface?
+Common implementations include:
+HashMap: Unordered, allows null keys and values.
+TreeMap: Ordered according to natural ordering or a comparator, does not allow null keys.
+LinkedHashMap: Maintains insertion order, allows null keys and values.
+ConcurrentHashMap: Thread-safe, high concurrency.
+Q9: How do you sort a collection in Java?
+Collections can be sorted using:
+Collections.sort(List): Sorts the list in natural order.
+Collections.sort(List, Comparator): Sorts the list according to a specified comparator.
+List.sort(Comparator): Sorts the list according to a specified comparator (Java 8 and above).
+For Set and Map, you can use TreeSet and TreeMap, which maintain elements in a sorted order.
+Q10: What is a PriorityQueue?
+A PriorityQueue is a queue that orders its elements according to their natural ordering or a specified comparator. It is part of the java.util package and provides O(log n) time for the basic operations (insertion, deletion, and retrieval).
+Q11: What are the differences between fail-fast and fail-safe iterators?
+Fail-fast iterators: Immediately throw ConcurrentModificationException if the collection is modified during iteration, except through the iterator's own remove method. Examples include iterators of ArrayList, HashSet, and HashMap.
+Fail-safe iterators: Do not throw exceptions if the collection is modified during iteration. They operate on a copy of the collection. Examples include iterators of CopyOnWriteArrayList, CopyOnWriteArraySet, and ConcurrentHashMap.
+Q12: What is the purpose of the Comparable and Comparator interfaces?
+Comparable: Defines a natural ordering for objects of a class. A class implementing Comparable must override the compareTo method.
+Code
+public class Person implements Comparable<Person> {
+    private String name;
+    private int age;
+        @Override
+       public int compareTo(Person other)
+       {
+        return Integer.compare(this.age, other.age);
+       } 
+}
+ 
+Comparator: Defines a custom ordering for objects of a class. It can be used to compare objects in a specific way. A class implementing Comparator must override the compare method.
+Code
+public class PersonAgeComparator implements Comparator<Person>
+{
+    @Override
+public int compare(Person p1, Person p2) {
+        return Integer.compare(p1.getAge(), p2.getAge());
+    }
+}
+ 
+Q13: How does a HashSet work internally?
+A HashSet uses a HashMap internally to store its elements. Each element in the HashSet is stored as a key in the HashMap with a constant dummy value. This ensures that each element is unique because keys in a HashMap are unique.
+Q14: What is the difference between remove(Object o) and remove(int index) in List?
+remove(Object o): Removes the first occurrence of the specified element from the list, if it is present.
+remove(int index): Removes the element at the specified position in the list.
+Q15: What are some best practices for using collections in Java?
+Choose the right collection type based on your requirements (e.g., use ArrayList for fast random access, LinkedList for frequent insertions and deletions).
+Prefer using interfaces (e.g., List, Set) for type declarations to increase flexibility.
+Initialize collections with an appropriate initial capacity to avoid resizing overhead.
+Use generics to ensure type safety.
+Prefer ConcurrentHashMap over Collections.synchronizedMap for better performance in concurrent applications.
+Use immutable collections for read-only data to ensure thread safety.
+ 
+ 
+Frequently Asked Questions (FAQs) on Java Stream API
+Q1: What is the Java Stream API?
+The Java Stream API, introduced in Java 8, is used to process collections of objects in a functional-style. Streams allow for operations such as filtering, mapping, and reducing over a collection of data.
+ 
+ 
+Q2: What is the difference between a Stream and a Collection?
+Collection: A collection is an in-memory data structure that holds data and provides methods to manipulate that data (e.g., List, Set, Map).
+Stream: A stream is a sequence of elements supporting sequential and parallel aggregate operations. It does not store data and does not modify the underlying data structure. It is designed to process data.
+Q3: How do you create a Stream in Java?
+Streams can be created in various ways, such as from collections, arrays, or generating streams:
+From collections:
+From arrays:
+Using Stream.of:
+Q4: What are intermediate and terminal operations in Streams?
+Intermediate operations: These return a new stream and are lazy, meaning they are not executed until a terminal operation is invoked. Examples include filter, map, and sorted.
+Terminal operations: These produce a result or a side effect and terminate the stream. Examples include forEach, collect, reduce, and count.
+Q5: What is the difference between map and flatMap?
+map: Applies a function to each element of the stream and returns a new stream consisting of the results.
+flatMap: Applies a function to each element, which returns a stream of values, and then flattens these streams into a single stream.
+Q6: How does filter work in Streams?
+The filter method takes a Predicate and returns a stream that includes only the elements that match the given predicate.
+Code
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+List<Integer> evenNumbers = numbers.stream().filter(n -> n % 2 == 0).collect(Collectors.toList());
+Q7: What is the use of the collect method in Streams?
+The collect method is a terminal operation that transforms the elements of a stream into a different form, typically a collection such as a List, Set, or Map.
+Code
+List<String> list = Stream.of("a", "b”,"c").collect(Collectors.toList());
+Q8: How do you perform parallel processing with Streams?
+Streams can be processed in parallel by using the parallelStream method on a collection or calling parallel on a stream.
+code
+ 
+List<String> list = Arrays.asList("a", "b", "c");
+list.parallelStream().forEach(System.out::println);
+Q9: What is the reduce method in Streams?
+The reduce method is a terminal operation that performs a reduction on the elements of the stream using an associative accumulation function and returns an Optional.
+Code
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+Optional<Integer> sum = numbers.stream().reduce(Integer::sum);
+Q10: How can you handle exceptions in a Stream pipeline?
+To handle exceptions in a stream pipeline, you can wrap the code that might throw an exception in a try-catch block, or create a custom wrapper function to handle exceptions.
+Code
+List<Integer> numbers = Arrays.asList(1, 2, 3);
+List<Integer> results = numbers.stream()
+    .map(n -> {  
+     try {
+            return someMethodThatMightThrow(n);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }).collect(Collectors.toList());
+ 
+Q11: Can Streams be reused?
+No, streams cannot be reused. Once a terminal operation is invoked on a stream, it is consumed and cannot be used again. You need to create a new stream to process the same data again.
+Q12: What are infinite streams, and how do you create them?
+Infinite streams are streams that do not have a predefined end. They can be created using methods like Stream.iterate and Stream.generate.
+Stream.iterate:
+Stream.generate:
+Q13: How do you limit the size of a Stream?
+You can limit the size of a stream using the limit method, which truncates the stream to a specified number of elements.
+Code
+Stream<Integer> infiniteStream = Stream.iterate(0, n -> n + 1);
+
+List<Integer> limited = infiniteStream.limit(10).collect(Collectors.toList());
+Q14: What is the purpose of the peek method in Streams?
+The peek method is an intermediate operation that allows you to perform a side effect (such as logging) on each element as it is processed by the stream pipeline.
+Code
+Stream.of("a", "b", "c")
+    .peek(System.out::println)
+    .collect(Collectors.toList());
+Q15: How do you find the maximum or minimum value in a Stream?
+You can find the maximum or minimum value in a stream using the max and min methods, respectively, which take a comparator as an argument.
+Code
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+Optional<Integer> max = numbers.stream().max(Integer::compare);
+Optional<Integer> min = numbers.stream().min(Integer::compare);
+Code
+Stream<Double> infiniteStream = Stream.generate(Math::random);
+Code
+Stream<Integer> infiniteStream = Stream.iterate(0, n -> n + 1);
+Code
+List<List<String>> listOfLists = Arrays.asList(Arrays.asList("a", "b"), Arrays.asList("c", "d"));
+
+List<String> flatList = listOfLists.stream().flatMap(List::stream).collect(Collectors.toList());
+Code
+List<String> words = Arrays.asList("hello", "world");
+List<Integer> lengths = words.stream().map(String::length).collect(Collectors.toList());
+ 
+Code
+Stream<String> stream = Stream.of("a", "b", "c");
+Code
+String[] array = {"a", "b", "c"};
+Stream<String> stream = Arrays.stream(array);
+ 
+Code
+List<String> list = Arrays.asList("a", "b", "c");
+Stream<String> stream = list.stream();
+ 
+ 
+ 
+Exception Handling
+ 
+1. Handling Division by Zero
+Write a program that takes two integers, divides the first by the second, and handles the case where the second integer is zero by throwing an ArithmeticException.
+Input:
+Two integers, a and b.
+Output:
+The result of a/b, or an error message if division by zero is attempted.
+java
+Sample Code
+import java.util.Scanner;
+ 
+public class DivisionByZero {
+   public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+       try {
+           int a = sc.nextInt();
+           int b = sc.nextInt();
+          System.out.println(a / b);
+       } catch (ArithmeticException e) {
+          System.out.println("Error: Division by zero is not allowed.");
+       }
+   }
+}
+2. Handle Invalid Input Format
+Write a program that reads a number from the user and prints it squared. If the input is not a number, catch the NumberFormatException.
+Input:
+A string that may or may not be a valid number.
+Output:
+The square of the number, or an error message if the input is invalid.
+java
+Sample Code
+import java.util.Scanner;
+ 
+public class SquareNumber {
+   public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+       try {
+           String input = sc.next();
+           int num = Integer.parseInt(input);
+          System.out.println(num * num);
+       } catch (NumberFormatException e) {
+          System.out.println("Error: Invalid input. Please enter a valid number.");
+       }
+   }
+}
+3. Array Index Out of Bounds
+Write a program that takes an array of integers and an index from the user and prints the element at the given index. If the index is out of bounds, catch the ArrayIndexOutOfBoundsException.
+Input:
+A list of integers and an index.
+Output:
+The element at the specified index or an error message if the index is invalid.
+java
+Sample Code
+import java.util.Scanner;
+ 
+public class ArrayExceptionHandling {
+   public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+       int[] arr = {10, 20, 30, 40, 50};
+       try {
+           int index = sc.nextInt();
+          System.out.println(arr[index]);
+       } catch (ArrayIndexOutOfBoundsException e) {
+          System.out.println("Error: Index out of bounds.");
+       }
+   }
+}
+4. File Not Found Exception
+Write a program to read data from a file. If the file is not found, handle the FileNotFoundException.
+Input:
+The name of the file to read.
+Output:
+The contents of the file, or an error message if the file is not found.
+java
+Sample Code
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+ 
+public class ReadFile {
+   public static void main(String[] args) {
+       try {
+           File file = new File("example.txt");
+           Scanner sc = new Scanner(file);
+           while (sc.hasNextLine()) {
+              System.out.println(sc.nextLine());
+           }
+          sc.close();
+       } catch (FileNotFoundException e) {
+          System.out.println("Error: File not found.");
+       }
+   }
+}
+5. Multiple Exception Handling
+Write a program that divides two numbers and handles both ArithmeticException and InputMismatchException.
+Input:
+Two numbers.
+Output:
+The result of the division or a specific error message for each exception.
+java
+Sample Code
+import java.util.InputMismatchException;
+import java.util.Scanner;
+ 
+public class MultipleExceptionHandling {
+   public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+       try {
+           int a = sc.nextInt();
+           int b = sc.nextInt();
+          System.out.println(a / b);
+       } catch (ArithmeticException e) {
+          System.out.println("Error: Cannot divide by zero.");
+       } catch (InputMismatchException e) {
+          System.out.println("Error: Please enter valid integers.");
+       }
+   }
+}
+6. Custom Exception for Age Validation
+Create a custom exception class InvalidAgeException that is thrown when the user tries to enter an age less than 18 or greater than 100.
+Input:
+An age input from the user.
+Output:
+A message that validates the age or throws a custom exception.
+java
+Sample Code
+import java.util.Scanner;
+ 
+class InvalidAgeException extends Exception {
+   public InvalidAgeException(String message) {
+      super(message);
+   }
+}
+ 
+public class AgeValidation {
+   public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+       try {
+          System.out.println("Enter your age:");
+           int age = sc.nextInt();
+           if (age < 18 || age > 100) {
+               throw new InvalidAgeException("Age must be between 18 and 100.");
+           }
+          System.out.println("Valid age: " + age);
+       } catch (InvalidAgeException e) {
+          System.out.println(e.getMessage());
+       }
+   }
+}
+7. Handling NullPointerException
+Write a program that tries to access a method on a null object and handles the NullPointerException.
+Input:
+No specific input required.
+Output:
+A message indicating the null reference error.
+java
+Sample Code
+public class NullPointerHandling {
+   public static void main(String[] args) {
+       String str = null;
+       try {
+          System.out.println(str.length());
+       } catch (NullPointerException e) {
+          System.out.println("Error: Null reference encountered.");
+       }
+   }
+}
+8. Exception Propagation
+Write a program that demonstrates exception propagation by calling a method that throws an unchecked exception and handling it in the calling method.
+Input:
+No specific input required.
+Output:
+The caught exception message.
+java
+Sample Code
+public class ExceptionPropagation {
+   public static void main(String[] args) {
+       try {
+           method1();
+       } catch (ArithmeticException e) {
+           System.out.println("Caught exception in main: " + e.getMessage());
+       }
+   }
+ 
+   public static void method1() {
+       method2();
+   }
+ 
+   public static void method2() {
+       int result = 10 / 0; // This will throw ArithmeticException
+   }
+}
+9. Resource Management using Try-With-Resources
+Write a program to demonstrate exception handling using try-with-resources to automatically close resources.
+Input:
+No specific input required.
+Output:
+A message indicating that resources have been closed.
+java
+Sample Code
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+ 
+public class TryWithResources {
+   public static void main(String[] args) {
+       try (BufferedReader br = new BufferedReader(new FileReader("example.txt"))) {
+          System.out.println(br.readLine());
+       } catch (IOException e) {
+          System.out.println("Error: " + e.getMessage());
+       }
+   }
+}
+These questions will give you a solid understanding of how to work with exceptions in Java and are good practice for a coding contest or real-world applications. 
+ 
+ 
+Collections Practice
+ 
+Here are some Collections manipulation coding questions to help you practice for HackerRank assessments:
+1. Sort a List of Strings by Length
+Write a program to sort a list of strings based on their lengths, and if two strings have the same length, sort them lexicographically.
+Input:
+A list of strings.
+Output:
+A sorted list of strings first by length, then lexicographically.
+java
+Sample Code
+import java.util.*;
+ 
+public class SortStringsByLength {
+   public static void main(String[] args) {
+      List<String> strings = Arrays.asList("apple", "banana", "kiwi", "pear", "grape");
+      Collections.sort(strings, (a, b) -> {
+           if (a.length() == b.length()) {
+               return a.compareTo(b);
+           }
+           return a.length() - b.length();
+       });
+      System.out.println(strings);
+   }
+}
+2. Find Duplicates in an ArrayList
+Given an ArrayList of integers, find and print the duplicates.
+Input:
+A list of integers.
+Output:
+The duplicate elements from the list.
+java
+Sample Code
+import java.util.*;
+ 
+public class FindDuplicates {
+   public static void main(String[] args) {
+      List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 1, 2, 6);
+      Set<Integer> seen = new HashSet<>();
+      Set<Integer> duplicates = new HashSet<>();
+ 
+       for (int num : list) {
+           if (!seen.add(num)) {
+              duplicates.add(num);
+           }
+       }
+ 
+      System.out.println(duplicates);
+   }
+}
+3. Frequency Count of Each Element
+Given a list of integers, count the frequency of each element in the list and print it.
+Input:
+A list of integers.
+Output:
+A frequency count of each element.
+java
+Sample Code
+import java.util.*;
+ 
+public class FrequencyCount {
+   public static void main(String[] args) {
+      List<Integer> list = Arrays.asList(1, 2, 2, 3, 4, 3, 4, 4);
+      Map<Integer, Integer> frequencyMap = new HashMap<>();
+ 
+       for (int num : list) {
+          frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+       }
+ 
+       for (Map.Entry<Integer, Integer> entry : frequencyMap.entrySet()) {
+          System.out.println(entry.getKey() + ": " + entry.getValue());
+       }
+   }
+}
+4. Remove Duplicates from a List
+Write a program to remove duplicates from a list while preserving the original order of the elements.
+Input:
+A list of integers.
+Output:
+A list with duplicates removed.
+java
+Sample Code
+import java.util.*;
+ 
+public class RemoveDuplicates {
+   public static void main(String[] args) {
+      List<Integer> list = Arrays.asList(1, 2, 3, 2, 4, 5, 1, 6);
+      Set<Integer> seen = new LinkedHashSet<>(list);
+      System.out.println(new ArrayList<>(seen));
+   }
+}
+5. Merge Two Sorted Lists
+You are given two sorted lists. Write a program to merge them into a single sorted list.
+Input:
+Two sorted lists of integers.
+Output:
+A single merged sorted list.
+java
+Sample Code
+import java.util.*;
+ 
+public class MergeSortedLists {
+   public static void main(String[] args) {
+      List<Integer> list1 = Arrays.asList(1, 3, 5, 7);
+      List<Integer> list2 = Arrays.asList(2, 4, 6, 8);
+      
+      List<Integer> merged = new ArrayList<>(list1);
+      merged.addAll(list2);
+      
+      Collections.sort(merged);
+      
+      System.out.println(merged);
+   }
+}
+6. Find Intersection of Two Sets
+Write a program to find the intersection of two sets of integers.
+Input:
+Two sets of integers.
+Output:
+A set that contains only the elements common to both input sets.
+java
+Sample Code
+import java.util.*;
+ 
+public class IntersectionOfSets {
+   public static void main(String[] args) {
+      Set<Integer> set1 = new HashSet<>(Arrays.asList(1, 2, 3, 4, 5));
+      Set<Integer> set2 = new HashSet<>(Arrays.asList(3, 4, 5, 6, 7));
+      
+      set1.retainAll(set2);
+      
+      System.out.println(set1);
+   }
+}
+7. Sort Map by Values
+You are given a map of string keys and integer values. Write a program to sort the map by values.
+Input:
+A map of strings and integers.
+Output:
+The sorted map by values.
+java
+Sample Code
+import java.util.*;
+ 
+public class SortMapByValues {
+   public static void main(String[] args) {
+       Map<String, Integer> map = new HashMap<>();
+      map.put("apple", 3);
+      map.put("banana", 1);
+      map.put("cherry", 2);
+ 
+      List<Map.Entry<String, Integer>> list = new ArrayList<>(map.entrySet());
+      list.sort(Map.Entry.comparingByValue());
+ 
+       for (Map.Entry<String, Integer> entry : list) {
+           System.out.println(entry.getKey() + ": " + entry.getValue());
+       }
+   }
+}
+8. Find Kth Largest Element in a List
+Given a list of integers, find the Kth largest element in the list.
+Input:
+A list of integers and an integer K.
+Output:
+The Kth largest element in the list.
+java
+Sample Code
+import java.util.*;
+ 
+public class KthLargestElement {
+   public static void main(String[] args) {
+      List<Integer> list = Arrays.asList(3, 2, 1, 5, 6, 4);
+       int k = 2;
+      
+      Collections.sort(list, Collections.reverseOrder());
+      
+      System.out.println(k + "th largest element: " + list.get(k - 1));
+   }
+}
+9. Rotate a Deque
+Given a Deque of integers, rotate it K times to the right.
+Input:
+A deque of integers and an integer K.
+Output:
+The deque after K rotations.
+java
+Sample Code
+import java.util.*;
+ 
+public class RotateDeque {
+   public static void main(String[] args) {
+      Deque<Integer> deque = new ArrayDeque<>(Arrays.asList(1, 2, 3, 4, 5));
+       int k = 2;
+ 
+       for (int i = 0; i < k; i++) {
+           int last = deque.removeLast();
+          deque.addFirst(last);
+       }
+ 
+      System.out.println(deque);
+   }
+}
+10. Group Anagrams
+Given an array of strings, group anagrams together.
+Input:
+A list of strings.
+Output:
+A list of lists where each list contains strings that are anagrams.
+java
+Sample Code
+import java.util.*;
+ 
+public class GroupAnagrams {
+   public static void main(String[] args) {
+      List<String> list = Arrays.asList("eat", "tea", "tan", "ate", "nat", "bat");
+       Map<String, List<String>> anagramMap = new HashMap<>();
+      
+       for (String str : list) {
+           char[] chars = str.toCharArray();
+          Arrays.sort(chars);
+           String sorted = new String(chars);
+          anagramMap.computeIfAbsent(sorted, k -> new ArrayList<>()).add(str);
+       }
+      
+      System.out.println(new ArrayList<>(anagramMap.values()));
+   }
+}
+These questions will help you become familiar with collections in Java such as List, Set, Map, and Deque, and allow you to practice important operations like sorting, merging, and finding duplicates.
+ 
+ 
+Stream API Coding Practice
+ 
+Stream API practice questions to help you prepare for HackerRank coding assessments:
+1. Sum of Even Numbers
+Given a list of integers, use Stream API to find the sum of all even numbers.
+Input:
+A list of integers.
+Output:
+The sum of all even numbers.
+java
+Sample Code
+import java.util.*;
+import java.util.stream.*;
+ 
+public class SumOfEvenNumbers {
+   public static void main(String[] args) {
+      List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+ 
+       int sum = numbers.stream()
+                       .filter(n -> n % 2 == 0)
+                       .mapToInt(Integer::intValue)
+                       .sum();
+ 
+      System.out.println(sum);
+   }
+}
+2. Convert List of Strings to Uppercase
+Given a list of strings, convert each string to uppercase using Stream API.
+Input:
+A list of strings.
+Output:
+A list of uppercase strings.
+java
+Sample Code
+import java.util.*;
+import java.util.stream.*;
+ 
+public class ConvertToUppercase {
+   public static void main(String[] args) {
+      List<String> strings = Arrays.asList("apple", "banana", "cherry");
+ 
+      List<String> uppercaseStrings = strings.stream()
+                                             .map(String::toUpperCase)
+                                             .collect(Collectors.toList());
+ 
+      System.out.println(uppercaseStrings);
+   }
+}
+3. Find Maximum Value in a List
+Given a list of integers, use Stream API to find the maximum value.
+Input:
+A list of integers.
+Output:
+The maximum value in the list.
+java
+Sample Code
+import java.util.*;
+import java.util.stream.*;
+ 
+public class FindMaxValue {
+   public static void main(String[] args) {
+      List<Integer> numbers = Arrays.asList(3, 1, 4, 1, 5, 9, 2, 6, 5);
+ 
+       int max = numbers.stream()
+                       .max(Integer::compare)
+                       .orElseThrow(NoSuchElementException::new);
+ 
+      System.out.println(max);
+   }
+}
+4. Count Elements Greater Than a Threshold
+Given a list of integers, count how many numbers are greater than a specified threshold using Stream API.
+Input:
+A list of integers and a threshold value.
+Output:
+The count of numbers greater than the threshold.
+java
+Sample Code
+import java.util.*;
+import java.util.stream.*;
+ 
+public class CountGreaterThanThreshold {
+   public static void main(String[] args) {
+      List<Integer> numbers = Arrays.asList(10, 20, 30, 40, 50, 60);
+       int threshold = 25;
+ 
+       long count = numbers.stream()
+                          .filter(n -> n > threshold)
+                          .count();
+ 
+      System.out.println(count);
+   }
+}
+5. Find First Element Matching Condition
+Given a list of integers, find the first element greater than a specified value using Stream API.
+Input:
+A list of integers and a value.
+Output:
+The first number greater than the specified value or a message if none is found.
+java
+Sample Code
+import java.util.*;
+import java.util.stream.*;
+ 
+public class FindFirstGreaterThan {
+   public static void main(String[] args) {
+      List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+       int value = 5;
+ 
+      numbers.stream()
+             .filter(n -> n > value)
+             .findFirst()
+             .ifPresentOrElse(System.out::println, 
+                              () -> System.out.println("No element found"));
+   }
+}
+6. Concatenate Strings with Delimiter
+Given a list of strings, concatenate them into a single string with a delimiter using Stream API.
+Input:
+A list of strings and a delimiter.
+Output:
+A single string with the elements concatenated by the delimiter.
+java
+Sample Code
+import java.util.*;
+import java.util.stream.*;
+ 
+public class ConcatenateWithDelimiter {
+   public static void main(String[] args) {
+      List<String> strings = Arrays.asList("apple", "banana", "cherry");
+       String delimiter = ", ";
+ 
+       String result = strings.stream()
+                             .collect(Collectors.joining(delimiter));
+ 
+      System.out.println(result);
+   }
+}
+7. Square of Each Element in a List
+Given a list of integers, return a list containing the square of each element using Stream API.
+Input:
+A list of integers.
+Output:
+A list of the squares of the integers.
+java
+Sample Code
+import java.util.*;
+import java.util.stream.*;
+ 
+public class SquareEachElement {
+   public static void main(String[] args) {
+      List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+ 
+      List<Integer> squares = numbers.stream()
+                                      .map(n -> n * n)
+                                     .collect(Collectors.toList());
+ 
+      System.out.println(squares);
+   }
+}
+8. Group Strings by Length
+Given a list of strings, group them by their length using Stream API.
+Input:
+A list of strings.
+Output:
+A map where the key is the string length and the value is a list of strings of that length.
+java
+Sample Code
+import java.util.*;
+import java.util.stream.*;
+ 
+public class GroupByLength {
+   public static void main(String[] args) {
+      List<String> strings = Arrays.asList("cat", "elephant", "dog", "lion", "antelope");
+ 
+      Map<Integer, List<String>> groupedByLength = strings.stream()
+                                                          .collect(Collectors.groupingBy(String::length));
+ 
+      System.out.println(groupedByLength);
+   }
+}
+9. Remove Duplicates and Sort a List
+Given a list of integers, use Stream API to remove duplicates and return the list sorted.
+Input:
+A list of integers.
+Output:
+A sorted list with duplicates removed.
+java
+Sample Code
+import java.util.*;
+import java.util.stream.*;
+ 
+public class RemoveDuplicatesAndSort {
+   public static void main(String[] args) {
+      List<Integer> numbers = Arrays.asList(5, 3, 8, 1, 3, 5, 7, 9);
+ 
+      List<Integer> sortedUniqueNumbers = numbers.stream()
+                                                 .distinct()
+                                                 .sorted()
+                                                 .collect(Collectors.toList());
+ 
+      System.out.println(sortedUniqueNumbers);
+   }
+}
+10. Partition a List of Strings Based on Condition
+Given a list of strings, partition the strings into two groups based on whether their length is greater than 3 using Stream API.
+Input:
+A list of strings.
+Output:
+A map with two entries: one containing strings with length greater than 3 and one containing strings with length 3 or less.
+java
+Sample Code
+import java.util.*;
+import java.util.stream.*;
+ 
+public class PartitionByLength {
+   public static void main(String[] args) {
+      List<String> strings = Arrays.asList("ant", "bear", "cat", "dog", "elephant");
+ 
+      Map<Boolean, List<String>> partitioned = strings.stream()
+                                                      .collect(Collectors.partitioningBy(s -> s.length() > 3));
+ 
+      System.out.println(partitioned);
+   }r
+}
+These questions will help you practice using Java's Stream API to manipulate and process data efficiently. 
+ 
+ 
+String Handling
+ 
+String handling practice questions in Java that will help you sharpen your skills:
+1. Reverse a String
+Write a method to reverse a given string.
+java
+Sample Code
+public static String reverseString(String input) {
+   return new StringBuilder(input).reverse().toString();
+}
+2. Check if a String is Palindrome
+Determine if a given string is a palindrome (a word, phrase, or sequence that reads the same backward as forward).
+java
+Sample Code
+public static boolean isPalindrome(String input) {
+   String reversed = new StringBuilder(input).reverse().toString();
+   return input.equals(reversed);
+}
+3. Count Vowels and Consonants
+Write a method that takes a string and counts the number of vowels and consonants.
+java
+Sample Code
+public static void countVowelsAndConsonants(String input) {
+   int vowels = 0, consonants = 0;
+   input = input.toLowerCase();
+   for (char c : input.toCharArray()) {
+       if ("aeiou".indexOf(c) != -1) {
+           vowels++;
+       } else if (Character.isLetter(c)) {
+          consonants++;
+       }
+   }
+  System.out.println("Vowels: " + vowels + ", Consonants: " + consonants);
+}
+4. Find First Non-Repeated Character
+Given a string, find the first non-repeated character in it.
+java
+Sample Code
+public static char firstNonRepeatedChar(String input) {
+   Map<Character, Integer> charCount = new LinkedHashMap<>();
+   for (char c : input.toCharArray()) {
+      charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+   }
+   for (Map.Entry<Character, Integer> entry : charCount.entrySet()) {
+       if (entry.getValue() == 1) {
+           return entry.getKey();
+       }
+   }
+   return '\0'; // Return null character if all are repeated
+}
+5. Check if Two Strings are Anagrams
+Write a method to check if two strings are anagrams of each other.
+java
+Sample Code
+public static boolean areAnagrams(String str1, String str2) {
+   char[] arr1 = str1.toCharArray();
+   char[] arr2 = str2.toCharArray();
+   Arrays.sort(arr1);
+   Arrays.sort(arr2);
+   return Arrays.equals(arr1, arr2);
+}
+6. Remove Duplicates from a String
+Write a method to remove duplicate characters from a given string.
+java
+Sample Code
+public static String removeDuplicates(String input) {
+  Set<Character> seen = new LinkedHashSet<>();
+   for (char c : input.toCharArray()) {
+       seen.add(c);
+   }
+   StringBuilder sb = new StringBuilder();
+   for (char c : seen) {
+       sb.append(c);
+   }
+   return sb.toString();
+}
+7. Count Occurrences of Each Character
+Write a method that counts the occurrences of each character in a string.
+java
+Sample Code
+public static void countCharOccurrences(String input) {
+   Map<Character, Integer> occurrences = new HashMap<>();
+   for (char c : input.toCharArray()) {
+      occurrences.put(c, occurrences.getOrDefault(c, 0) + 1);
+   }
+   for (Map.Entry<Character, Integer> entry : occurrences.entrySet()) {
+      System.out.println(entry.getKey() + ": " + entry.getValue());
+   }
+}
+8. Find Longest Substring Without Repeating Characters
+Write a method to find the longest substring in a given string that does not repeat characters.
+java
+Sample Code
+public static String longestUniqueSubstring(String input) {
+   String longest = "";
+  Set<Character> seen = new HashSet<>();
+   int start = 0;
+  
+   for (int end = 0; end < input.length(); end++) {
+       char c = input.charAt(end);
+       while (seen.contains(c)) {
+          seen.remove(input.charAt(start));
+           start++;
+       }
+       seen.add(c);
+       if (end - start + 1 > longest.length()) {
+           longest = input.substring(start, end + 1);
+       }
+   }
+   return longest;
+}
+9. Check if a String Contains Only Digits
+Write a method that checks if a string contains only digits.
+java
+Sample Code
+public static boolean isNumeric(String input) {
+   return input.matches("\\d+");
+}
+10. Find All Permutations of a String
+Write a method to print all permutations of a given string.
+java
+Sample Code
+public static void findPermutations(String input) {
+   permute(input, "");
+}
+ 
+private static void permute(String input, String result) {
+   if (input.length() == 0) {
+      System.out.println(result);
+       return;
+   }
+   for (int i = 0; i < input.length(); i++) {
+       char c = input.charAt(i);
+       String remainder = input.substring(0, i) + input.substring(i + 1);
+      permute(remainder, result + c);
+   }
+}
+These questions cover various string manipulation techniques, from basic to more advanced concepts, and will give you plenty of opportunities to practice Java's String and StringBuilder classes. 
+ 
+ 
+Try to solve below questions using collections
+ 
+Problem Statement: Student Marks System
+You are tasked with designing a Student Marks Management System using a TreeMap in Java. This system will manage a collection of students and their marks for a specific subject. The system should be able to perform the following operations:
+Functional Requirements
+Add a New Student
+
+Add a student with their name and marks to the system.
+Input: Name (String), Marks (Integer).
+Output: Confirm the addition of the student.
+ 
+Example:
+
+Input: Add: {Name: "John", Marks: 85}
+
+Output: Added: {Name: "John", Marks: 85}
+Find the Student with the Highest Marks
+
+Identify and display the student with the highest marks. If there is a tie (multiple students with the same marks), return the student whose name is alphabetically smallest.
+Output: Name and Marks of the student with the highest score.
+Example:
+
+Input:Output: Highest Marks: Alice with 92
+Remove the Student with the Lowest Marks
+
+Remove the student with the lowest marks from the system. If there is a tie (multiple students with the same marks), remove the student whose name is alphabetically smallest.
+Output: Confirm the removal of the student.
+Example:
+
+Input:Output: Removed: {Name: "Bob", Marks: 85}
+Display All Students
+
+Display all students currently in the system in alphabetical order of their names.
+Output: A list of all students and their marks.
+Example:
+
+Input:Output:
+Find the Average Marks
+
+Calculate and display the average marks of all students.
+Output: The average marks as a floating-point number.
+Example:
+
+Input:Output: Average Marks: 87.5
+Search for a Student by Name
+
+Search for a specific student by name and display their marks. If the student does not exist, display an appropriate message.
+Input: Student name (String).
+Output: Marks of the student if found; otherwise, a "not found" message.
+Example:
+
+Input:Output: Found: {Name: "Alice", Marks: 90}
+Update a Student's Marks
+
+Update the marks of a specific student. If the student does not exist, display an appropriate message.
+Input: Student name (String), New Marks (Integer).
+Output: Confirm the update or display an error message.
+Example:
+
+Input:Output: Updated: {Name: "Alice", New Marks: 95}
+Clear All Students
+
+Remove all students from the system.
+Output: Confirm that all students have been removed.
+Example:
+
+Input: Clear All
+
+Output: All students removed. TreeMap is now empty.
+Constraints
+Name Uniqueness:
+Names are case-sensitive ("John" is different from "john").
+No duplicate names are allowed.
+Ties in Marks:
+For operations involving ties (e.g., finding highest/lowest marks), use the alphabetical order of names to decide the result.
+Empty System:
+If the system is empty and an operation is requested (e.g., find the highest marks), display an appropriate message such as:
+"No students found."
+Input Example
+cssCopy codeAdd: {Name: "John", Marks: 85}  Add: {Name: "Alice", Marks: 92}  Add: {Name: "Bob", Marks: 85}  Display All  Find Highest  Remove Lowest  
+Find Average  
+Search: Name "Alice"  
+Update: {Name: "Alice", New Marks: 95}  
+Clear All
+Output Example
+yamlCopy codeAdded: {Name: "John", Marks: 85}  Added: {Name: "Alice", Marks: 92}  Added: {Name: "Bob", Marks: 85}  All Students:Name: Alice, Marks: 92Name: Bob, Marks: 85Name: John, Marks: 85Highest Marks: Alice with 92Removed: {Name: Bob, Marks: 85}  Average Marks: 88.5Found: {Name: "Alice", Marks: 92}  Updated: {Name: "Alice", New Marks: 95}  All students removed. TreeMap is now empty.
+cssCopy codeAdd: {Name: "Alice", Marks: 90}  Update: {Name: "Alice", New Marks: 95}  
+ 
+cssCopy codeAdd: {Name: "Alice", Marks: 90}  
+Search: Name "Alice"
+cssCopy codeAdd: {Name: "Alice", Marks: 90}  Add: {Name: "John", Marks: 85}  
+ 
+yamlCopy codeAll Students:Name: Alice, Marks: 90Name: John, Marks: 85
+cssCopy codeAdd: {Name: "Alice", Marks: 90}  Add: {Name: "John", Marks: 85}  
+ 
+yamlCopy codeAdd: {Name: "John", Marks: 85}  Add: {Name: "Bob", Marks: 85}  Remove Lowest:
+cssCopy codeAdd: {Name: "Alice", Marks: 92}  Add: {Name: "Bob", Marks: 92}  
+ 
+ 

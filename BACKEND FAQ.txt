@@ -1,0 +1,298 @@
+Spring Boot FAQs
+1. What is Spring Boot?
+Spring Boot is a Spring-based framework that simplifies application setup by offering:
+Auto-configuration
+Embedded servers (Tomcat, Jetty)
+Production-ready features (Actuator, Metrics)
+Opinionated starters
+2. What is the purpose of Spring Boot Starters?
+They are dependency descriptors that group relevant libraries into one.
+Example: spring-boot-starter-web includes Spring MVC, Jackson, Tomcat.
+3. What is application.properties / application.yml used for?
+It's used to externalize configuration:
+propertiesCopyEditserver.port=8081
+spring.datasource.url=jdbc:mysql://localhost:3306/test
+4. What is the use of @SpringBootApplication?
+A convenience annotation combining:
+@Configuration
+@EnableAutoConfiguration
+@ComponentScan
+5. How to run a Spring Boot application?
+Run main method: SpringApplication.run(App.class, args);
+Use Maven/Gradle: mvn spring-boot:run
+Deploy as executable JAR
+6. What is Spring Boot Actuator?
+It provides endpoints to monitor and manage the application (health, metrics, env). Example:
+/actuator/health, /actuator/metrics
+7. What is auto-configuration in Spring Boot?
+It automatically configures beans based on the classpath and properties.
+
+You can disable it with @EnableAutoConfiguration(exclude = ...).
+🔹 Spring Data JPA FAQs
+1. What is Spring Data JPA?
+A part of the Spring Data project that simplifies JPA-based repository development. It provides:
+CRUD repositories
+Query methods
+Paging and sorting
+Custom queries
+2. What is the use of JpaRepository?
+It’s a JPA-specific repository interface extending CrudRepository and PagingAndSortingRepository.
+javaCopyEditpublic interface UserRepository extends JpaRepository<User, Long> {
+    List<User> findByName(String name);
+}
+3. What is the difference between CrudRepository and JpaRepository?
+CrudRepository: Basic CRUD methods
+JpaRepository: Includes JPA-specific features like flush(), batch deletes, pagination
+4. How to write custom queries in Spring JPA?
+Use @Query annotation with JPQL or native SQL.
+javaCopyEdit@Query("SELECT u FROM User u WHERE u.email = ?1")User findByEmail(String email);
+5. What is the difference between @Entity and @Table?
+@Entity: Marks the class as a JPA entity.
+@Table(name = "tbl_user"): Specifies the DB table name. Optional if the class name matches the table.
+6. What is the purpose of @Id and @GeneratedValue?
+@Id: Primary key field
+@GeneratedValue: Strategy to auto-generate PK (AUTO, IDENTITY, SEQUENCE)
+7. What is the difference between findById() and getOne()?
+findById(id): Immediate DB hit, returns Optional
+getOne(id): Returns lazy proxy, DB hit happens when accessed
+8. What are query derivation methods?
+Spring JPA generates queries based on method names. Examples:
+findByUsername
+findByAgeBetween
+findByEmailAndStatus
+9. How to enable pagination and sorting in Spring JPA?
+Use Pageable and Sort as method params:
+javaCopyEditPage<User> findByStatus(String status, Pageable pageable);
+10. How to define relationships in JPA?
+@OneToOne
+@OneToMany
+@ManyToOne
+@ManyToMany
+With @JoinColumn, mappedBy, cascade, and fetch settings.
+ 
+Java FAQs
+ 
+Java Core FAQs
+1. What is Java?
+Java is a high-level, platform-independent, object-oriented programming language developed by Sun Microsystems (now Oracle).
+2. What are the key features of Java?
+Platform Independent (via JVM)
+Object-Oriented
+Simple & Secure
+Robust
+Multithreaded
+High Performance (via JIT)
+3. What is JVM, JRE, and JDK?
+JVM (Java Virtual Machine): Executes bytecode
+JRE (Java Runtime Environment): JVM + libraries
+JDK (Java Development Kit): JRE + development tools (javac, debugger, etc.)
+4. What is the difference between == and .equals() in Java?
+==: Compares object references
+.equals(): Compares object content (can be overridden)
+5. What is a constructor in Java?
+A special method that is used to initialize objects. It has the same name as the class and no return type.
+🔹 OOP Concepts in Java
+6. What are the main OOP principles in Java?
+Encapsulation
+Inheritance
+Polymorphism
+Abstraction
+7. What is method overloading and overriding?
+Overloading: Same method name, different parameters (compile-time)
+Overriding: Same method signature in subclass (runtime)
+8. What is abstraction and how is it implemented in Java?
+Hiding internal details and showing only functionality. Achieved using:
+Abstract classes
+Interfaces
+🔹 Java Collections FAQs
+9. What is the difference between ArrayList and LinkedList?
+ArrayList: Fast for get/set, uses dynamic array
+LinkedList: Fast for add/remove, uses doubly linked list
+10. What is the difference between HashMap and Hashtable?
+HashMap: Not synchronized, allows nulls
+Hashtable: Synchronized, doesn’t allow nulls
+11. What is the difference between List, Set, and Map?
+List: Ordered, allows duplicates
+Set: Unordered, no duplicates
+Map: Key-value pairs, keys must be unique
+🔹 Exception Handling FAQs
+12. What is the difference between checked and unchecked exceptions?
+Checked: Checked at compile time (e.g., IOException)
+Unchecked: Checked at runtime (e.g., NullPointerException)
+13. What is the use of finally block?
+Used to execute code regardless of exception occurrence. Often used to close resources.
+14. What are custom exceptions?
+User-defined exceptions extending Exception or RuntimeException.
+ 
+Java 8+ Features FAQs
+18. What are lambda expressions in Java?
+Anonymous functions introduced in Java 8.
+
+Example:
+javaCopyEdit(x, y) -> x + y
+19. What is the Stream API?
+Introduced in Java 8, allows functional-style operations on collections:
+javaCopyEditlist.stream().filter(x -> x > 10).collect(Collectors.toList());
+20. What is Optional in Java 8?
+A container object to avoid NullPointerException.
+javaCopyEditOptional<String> name = Optional.of("John");
+ 
+ 
+Spring Boot Microservices FAQs
+1. What is a Microservice?
+Microservices is an architectural style where the application is structured as a collection of loosely coupled, independently deployable services that communicate over APIs (typically HTTP/REST).
+2. Why use Spring Boot for Microservices?
+Spring Boot simplifies microservice development by offering:
+Auto-configuration
+Embedded servers (like Tomcat)
+RESTful web services support
+Actuator for health checks
+Easy integration with Spring Cloud
+3. How do Microservices communicate?
+Synchronous: REST APIs using RestTemplate or WebClient
+Asynchronous: Messaging queues like RabbitMQ, Kafka
+4. What is Spring Cloud?
+Spring Cloud provides tools for building microservice-based architectures like:
+Service discovery
+Circuit breakers
+Configuration management
+Gateway routing
+5. What is service discovery and how does it work?
+It allows services to find and communicate with each other without hardcoding the host/port.
+Eureka Server (Netflix OSS) is commonly used for this purpose.
+6. What is Eureka?
+Eureka is a service registry where microservices register themselves and discover others.
+@EnableEurekaServer: On registry service
+@EnableEurekaClient: On client service
+7. What is Spring Cloud Config?
+It provides centralized external configuration management across microservices using Git, filesystem, or other sources.
+8. What is API Gateway in microservices?
+A single entry point for all clients to access microservices. It handles:
+Routing
+Load balancing
+Security
+Rate limiting
+Example: Spring Cloud Gateway, Netflix Zuul
+9. What is Circuit Breaker in Microservices?
+A fault tolerance mechanism to stop calling a failing service repeatedly.
+
+Tools: Resilience4j, Hystrix (legacy)
+10. What is the difference between RestTemplate and WebClient?
+RestTemplate: Synchronous, traditional (being phased out)
+WebClient: Reactive and non-blocking (preferred in Spring WebFlux)
+11. How do you implement inter-service communication in Spring Boot?
+Using RestTemplate (simple REST call)
+Using Feign Client (declarative REST client)
+javaCopyEdit@FeignClient(name = "user-service") public interface UserClient {
+    @GetMapping("/users/{id}")    User getUserById(@PathVariable Long id);
+}
+12. What is Feign?
+A declarative HTTP client that simplifies REST client code using interfaces and annotations.
+13. What is load balancing in microservices?
+It distributes requests among service instances.
+Ribbon or Spring Cloud LoadBalancer is used with Eureka.
+14. How to secure microservices?
+Use Spring Security
+Use OAuth2 or JWT tokens
+API Gateway can handle authentication and authorization
+15. What is a distributed tracing system?
+It helps trace requests across multiple microservices to debug or monitor performance.
+Tools: Sleuth + Zipkin or OpenTelemetry + Jaeger
+16. What is Docker and why use it in microservices?
+Docker packages each microservice and its dependencies into a container, making deployment easier and consistent across environments.
+17. How do you handle configuration changes without restarting services?
+Using Spring Cloud Config Server with Git-backed configurations and /actuator/refresh.
+18. What are common tools used in a Spring Boot microservices architecture?
+Spring Boot: App framework
+Spring Cloud: Microservices infrastructure
+Eureka: Service registry
+Gateway: Routing and filtering
+Config Server: Centralized config
+Feign/WebClient: Inter-service communication
+Kafka/RabbitMQ: Event-based communication
+Sleuth + Zipkin: Tracing
+Docker + Kubernetes: Containerization and orchestration
+ 
+Angular FAQs (Beginner to Advanced)
+✅ Basics
+1. What is Angular?
+Angular is a TypeScript-based open-source front-end web application framework developed by Google. It’s used to build single-page applications (SPAs).
+2. What are the key features of Angular?
+Component-based architecture
+TypeScript support
+Dependency Injection
+RxJS for reactive programming
+Angular CLI for scaffolding
+Two-way data binding
+Directives and Pipes
+Routing and lazy loading
+3. What is a Component in Angular?
+A component is the basic UI building block in Angular. It consists of:
+Class (.ts)
+Template (.html)
+Styles (.css or .scss)
+Metadata (@Component decorator)
+4. What is a Module in Angular?
+A module groups components, pipes, directives, and services. The root module is usually AppModule.
+tsCopyEdit@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule],
+  bootstrap: [AppComponent]
+})
+5. What is Angular CLI?
+Angular CLI is a command-line interface tool for initializing, developing, scaffolding, and maintaining Angular applications.
+bashCopyEditng new my-app  
+ng serve  
+ng generate component my-component
+✅ Templates, Binding, and Directives
+6. What is data binding in Angular?
+Interpolation: {{ value }}
+Property binding: [src]="imageUrl"
+Event binding: (click)="onClick()"
+Two-way binding: [(ngModel)]="name"
+7. What are Angular directives?
+Structural Directives: *ngIf, *ngFor, *ngSwitch
+Attribute Directives: ngClass, ngStyle, custom directives
+8. What are pipes in Angular?
+Pipes transform output in templates. Example:
+{{ birthday | date:'shortDate' }}
+You can also create custom pipes.
+✅ Routing and Forms
+9. How does routing work in Angular?
+Routing enables navigation between views/components using the RouterModule. Routes are defined in the app-routing.module.ts file.
+10. What is lazy loading in Angular?
+Lazy loading loads modules only when they're needed, improving performance.
+11. What is the difference between Template-driven and Reactive forms?
+Template-driven: Simpler, suitable for basic forms (ngModel)
+Reactive: More powerful and scalable; uses FormControl, FormGroup
+✅ Services, DI, and Observables
+12. What is a service in Angular?
+Services are classes used to share data, logic, and state across components. They’re often injected using Angular's Dependency Injection system.
+13. What is Dependency Injection (DI)?
+DI allows classes to receive dependencies from external sources rather than creating them.
+tsCopyEditconstructor(private userService: UserService) {}
+14. What is RxJS?
+RxJS is a reactive programming library for handling async events via Observables.
+tsCopyEditthis.http.get<User[]>('api/users').subscribe(data => this.users = data);
+15. What is the difference between Observable and Promise?
+Observable: Can emit multiple values over time.
+Promise: Emits a single value once.
+✅ Advanced Topics
+16. What are lifecycle hooks in Angular?
+They allow you to tap into key moments in a component’s lifecycle:
+ngOnInit()
+ngOnChanges()
+ngOnDestroy()
+ngAfterViewInit(), etc.
+17. What is Ahead-of-Time (AOT) Compilation?
+AOT compiles the app at build time, improving performance and reducing runtime errors.
+18. What is Change Detection in Angular?
+Angular automatically detects changes and updates the DOM. You can customize change detection using ChangeDetectorRef.
+19. What is the difference between ngOnInit() and constructor()?
+constructor(): Called when the component is instantiated.
+ngOnInit(): Called after Angular sets up the component’s data-bound properties.
+20. What is Angular Universal?
+It is used for Server-Side Rendering (SSR) of Angular applications to improve SEO and load time.
+ 
+
+ 

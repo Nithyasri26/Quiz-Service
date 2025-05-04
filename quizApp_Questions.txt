@@ -1,0 +1,301 @@
+{
+        "questionId": "Q01",
+        "questionText": "Which class is loaded first when a Java application starts?",
+        "quizId": "Quiz01",
+        "correctAnswer": "Main class"
+    },
+    {
+        "questionId": "Q02",
+        "questionText": "What does the JIT compiler do in Java?",
+        "quizId": "Quiz01",
+        "correctAnswer": "Compiles bytecode into native code at runtime"
+    },
+    {
+        "questionId": "Q03",
+        "questionText": "Why are Java Strings immutable?",
+        "quizId": "Quiz01",
+        "correctAnswer": "To improve security and performance"
+    },
+    {
+        "questionId": "Q04",
+        "questionText": "Which of the following is used for garbage collection?",
+        "quizId": "Quiz01",
+        "correctAnswer": "finalize()"
+    },
+    {
+        "questionId": "Q05",
+        "questionText": "Which of these is a terminal operation in Java Streams?",
+        "quizId": "Quiz01",
+        "correctAnswer": "collect()"
+    },
+    {
+        "questionId": "Q06",
+        "questionText": "What is the difference between HashMap and TreeMap?",
+        "quizId": "Quiz01",
+        "correctAnswer": "TreeMap maintains sorted order, HashMap does not"
+    },
+    {
+        "questionId": "Q07",
+        "questionText": "What was the purpose of adding default and static methods in Java 8 interfaces?",
+        "quizId": "Quiz01",
+        "correctAnswer": "To allow interfaces to have method implementations"
+    },
+    {
+        "questionId": "Q08",
+        "questionText": "What is the key difference between Runnable and Callable in Java?",
+        "quizId": "Quiz01",
+        "correctAnswer": "Callable returns a result, Runnable does not"
+    },
+    {
+        "questionId": "Q09",
+        "questionText": "Which of these is a correct lambda expression?",
+        "quizId": "Quiz01",
+        "correctAnswer": "(a, b) -> a + b"
+    },
+    {
+        "questionId": "Q10",
+        "questionText": "Which method must be implemented when using Comparable?",
+        "quizId": "Quiz01",
+        "correctAnswer": "compareTo()"
+    },
+    {
+        "questionId": "Q11",
+        "questionText": "What is the difference between a list and a tuple in Python?",
+        "quizId": "Quiz02",
+        "correctAnswer": "A list is mutable, whereas a tuple is immutable."
+    },
+    {
+        "questionId": "Q12",
+        "questionText": "How do you define a function in Python?",
+        "quizId": "Quiz02",
+        "correctAnswer": "Using the 'def' keyword followed by the function name and parentheses."
+    },
+    {
+        "questionId": "Q13",
+        "questionText": "What is the purpose of the '__init__' method in Python classes?",
+        "quizId": "Quiz02",
+        "correctAnswer": "It is a constructor method used to initialize an object’s attributes."
+    },
+    {
+        "questionId": "Q14",
+        "questionText": "How do you handle exceptions in Python?",
+        "quizId": "Quiz02",
+        "correctAnswer": "Using try-except blocks."
+    },
+    {
+        "questionId": "Q15",
+        "questionText": "What is the difference between 'is' and '==' in Python?",
+        "quizId": "Quiz02",
+        "correctAnswer": "'is' checks object identity, while '==' checks value equality."
+    },
+    {
+        "questionId": "Q16",
+        "questionText": "What is the Global Interpreter Lock (GIL) in Python?",
+        "quizId": "Quiz02",
+        "correctAnswer": "The GIL is a mutex that allows only one thread to execute at a time in Python’s CPython implementation."
+    },
+    {
+        "questionId": "Q17",
+        "questionText": "What is the difference between deep copy and shallow copy in Python?",
+        "quizId": "Quiz02",
+        "correctAnswer": "A shallow copy creates a new object but references the same nested objects, while a deep copy creates completely independent copies."
+    },
+    {
+        "questionId": "Q18",
+        "questionText": "How does Python’s memory management work?",
+        "quizId": "Quiz02",
+        "correctAnswer": "Python uses automatic memory management with reference counting and garbage collection."
+    },
+    {
+        "questionId": "Q19",
+        "questionText": "What are metaclasses in Python?",
+        "quizId": "Quiz02",
+        "correctAnswer": "Metaclasses define the behavior of class creation and allow customization of class attributes and methods."
+    },
+    {
+        "questionId": "Q20",
+        "questionText": "What is the difference between 'staticmethod' and 'classmethod' in Python?",
+        "quizId": "Quiz02",
+        "correctAnswer": "A 'staticmethod' does not access instance or class variables, while a 'classmethod' takes 'cls' as the first parameter and can modify class attributes."
+    },
+    {
+        "questionId": "Q21",
+        "questionText": "What is the difference between <div> and <span> in HTML?",
+        "quizId": "Quiz03",
+        "correctAnswer": "<div> is a block-level element used for structure, while <span> is an inline element used for styling parts of text."
+    },
+    {
+        "questionId": "Q22",
+        "questionText": "What is the purpose of the <head> tag in HTML?",
+        "quizId": "Quiz03",
+        "correctAnswer": "The <head> tag contains metadata, links to stylesheets, scripts, and other information that is not visible on the page."
+    },
+    {
+        "questionId": "Q23",
+        "questionText": "What is the difference between <b> and <strong> in HTML?",
+        "quizId": "Quiz03",
+        "correctAnswer": "<b> makes text bold without semantic meaning, while <strong> indicates importance and has SEO benefits."
+    },
+    {
+        "questionId": "Q24",
+        "questionText": "What is the difference between relative, absolute, and fixed positioning in CSS?",
+        "quizId": "Quiz03",
+        "correctAnswer": "Relative is positioned relative to itself, absolute is positioned relative to its nearest positioned ancestor, and fixed is positioned relative to the viewport."
+    },
+    {
+        "questionId": "Q25",
+        "questionText": "What is the difference between vh, vw, em, and rem in CSS?",
+        "quizId": "Quiz03",
+        "correctAnswer": "`vh` and `vw` are viewport-based units, `em` is relative to the parent element, and `rem` is relative to the root element."
+    },
+    {
+        "questionId": "Q26",
+        "questionText": "What is the difference between null and undefined in JavaScript?",
+        "quizId": "Quiz03",
+        "correctAnswer": "`null` is an intentional empty value, while `undefined` means a variable has been declared but not assigned a value."
+    },
+    {
+        "questionId": "Q27",
+        "questionText": "What is hoisting in JavaScript?",
+        "quizId": "Quiz03",
+        "correctAnswer": "Hoisting is JavaScript's behavior of moving variable and function declarations to the top of their scope before execution."
+    },
+    {
+        "questionId": "Q28",
+        "questionText": "What is a closure in JavaScript?",
+        "quizId": "Quiz03",
+        "correctAnswer": "A closure is a function that retains access to its outer function’s variables even after the outer function has finished execution."
+    },
+    {
+        "questionId": "Q29",
+        "questionText": "What is the difference between `innerText`, `textContent`, and `innerHTML`?",
+        "quizId": "Quiz03",
+        "correctAnswer": "`innerText` gets only visible text, `textContent` gets all text, and `innerHTML` returns the HTML inside an element."
+    },
+    {
+        "questionId": "Q30",
+        "questionText": "What is the difference between `splice()` and `slice()`?",
+        "quizId": "Quiz03",
+        "correctAnswer": "`splice()` modifies the original array by adding/removing elements, while `slice()` returns a new array without modifying the original."
+    },
+    {
+        "questionId": "Q31",
+        "questionText": "What is the difference between `CrudRepository` and `JpaRepository` in Spring Data JPA?",
+        "quizId": "Quiz04",
+        "correctAnswer": "`CrudRepository` provides basic CRUD operations, while `JpaRepository` extends it with additional JPA-specific operations like pagination and batch processing."
+    },
+    {
+        "questionId": "Q32",
+        "questionText": "What is the purpose of the `@Transactional` annotation in Spring?",
+        "quizId": "Quiz04",
+        "correctAnswer": "`@Transactional` ensures that a method runs within a transaction, providing rollback and commit functionality."
+    },
+    {
+        "questionId": "Q33",
+        "questionText": "How does Hibernate handle lazy and eager loading?",
+        "quizId": "Quiz04",
+        "correctAnswer": "Lazy loading fetches related entities only when accessed, while eager loading retrieves them immediately."
+    },
+    {
+        "questionId": "Q34",
+        "questionText": "What is the DispatcherServlet in Spring MVC?",
+        "quizId": "Quiz04",
+        "correctAnswer": "DispatcherServlet is the front controller that routes incoming HTTP requests to appropriate handlers in a Spring MVC application."
+    },
+    {
+        "questionId": "Q35",
+        "questionText": "What is the role of Feign Client in Microservices?",
+        "quizId": "Quiz04",
+        "correctAnswer": "Feign Client is a declarative REST client in Spring Cloud used to simplify HTTP requests between Microservices."
+    },
+    {
+        "questionId": "Q36",
+        "questionText": "How does JDBC manage database connections?",
+        "quizId": "Quiz04",
+        "correctAnswer": "JDBC uses `DriverManager` or DataSource to establish connections and manages database interactions using `Connection`, `Statement`, and `ResultSet`."
+    },
+    {
+        "questionId": "Q37",
+        "questionText": "What is the difference between Monolithic and Microservices architecture in terms of scalability and maintainability?",
+        "quizId": "Quiz04",
+        "correctAnswer": "Monolithic applications are tightly coupled and harder to scale, while Microservices are modular, scalable, and independently deployable."
+    },
+    {
+        "questionId": "Q38",
+        "questionText": "How does Spring Boot auto-configuration work internally?",
+        "quizId": "Quiz04",
+        "correctAnswer": "Spring Boot uses `@EnableAutoConfiguration` to load default configurations based on classpath dependencies using `spring.factories`."
+    },
+    {
+        "questionId": "Q39",
+        "questionText": "What is the difference between `@Component`, `@Service`, and `@Repository` in Spring Boot?",
+        "quizId": "Quiz04",
+        "correctAnswer": "`@Component` is a generic stereotype for beans, `@Service` is for business logic, and `@Repository` is for DAO layers with exception translation."
+    },
+    {
+        "questionId": "Q40",
+        "questionText": "What is the difference between `IN` and `EXISTS` in JPQL?",
+        "quizId": "Quiz04",
+        "correctAnswer": "`IN` checks if a value exists within a list, while `EXISTS` is used with subqueries to check if records exist."
+    },
+    {
+        "questionId": "Q41",
+        "questionText": "What is the difference between INNER JOIN and OUTER JOIN in SQL?",
+        "quizId": "Quiz05",
+        "correctAnswer": "INNER JOIN returns only matching rows, while OUTER JOIN includes unmatched rows from one or both tables."
+    },
+    {
+        "questionId": "Q42",
+        "questionText": "What is the purpose of the GROUP BY clause in SQL?",
+        "quizId": "Quiz05",
+        "correctAnswer": "GROUP BY is used to group rows with the same values in specified columns and perform aggregate functions like SUM or COUNT."
+    },
+    {
+        "questionId": "Q43",
+        "questionText": "What is a database index, and how does it improve query performance?",
+        "quizId": "Quiz05",
+        "correctAnswer": "A database index is a data structure that improves search performance by enabling faster lookups of rows in a table."
+    },
+    {
+        "questionId": "Q44",
+        "questionText": "What is the difference between UNION and UNION ALL?",
+        "quizId": "Quiz05",
+        "correctAnswer": "UNION removes duplicate rows, while UNION ALL includes all rows, including duplicates."
+    },
+    {
+        "questionId": "Q45",
+        "questionText": "How does the HAVING clause differ from the WHERE clause in SQL?",
+        "quizId": "Quiz05",
+        "correctAnswer": "WHERE filters rows before aggregation, while HAVING filters grouped results after aggregation."
+    },
+    {
+        "questionId": "Q46",
+        "questionText": "What is a subquery, and how is it different from a JOIN?",
+        "quizId": "Quiz05",
+        "correctAnswer": "A subquery is a nested query that provides data to the main query, while a JOIN combines columns from multiple tables."
+    },
+    {
+        "questionId": "Q47",
+        "questionText": "What is a stored procedure, and how is it different from a function in SQL?",
+        "quizId": "Quiz05",
+        "correctAnswer": "A stored procedure performs operations and may return multiple values, while a function must return a single value."
+    },
+    {
+        "questionId": "Q48",
+        "questionText": "What is normalization in databases, and why is it important?",
+        "quizId": "Quiz05",
+        "correctAnswer": "Normalization is the process of organizing data to reduce redundancy and improve data integrity."
+    },
+    {
+        "questionId": "Q49",
+        "questionText": "What are ACID properties in database transactions?",
+        "quizId": "Quiz05",
+        "correctAnswer": "ACID stands for Atomicity, Consistency, Isolation, and Durability, ensuring reliable transactions in a database."
+    },
+    {
+        "questionId": "Q50",
+        "questionText": "What is the difference between a primary key and a foreign key?",
+        "quizId": "Quiz05",
+        "correctAnswer": "A primary key uniquely identifies records in a table, while a foreign key establishes a relationship between two tables."
+    }
+]
